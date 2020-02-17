@@ -78,7 +78,7 @@ L'opció _**exec**_ permet executar programes a la carpeta muntada i l'opció _*
 Per **instal·lar el servidor NFS**, cal executar l'ordre següent:
 
 ```text
-sudo apt-get install nfs-kernel-server
+sudo apt install nfs-kernel-server
 ```
 
 El paquet _**nfs-kernel-server**_ depèn del paquet _**nfs-common**_, el qual alhora depèn del paquet _**portmap**_. Per tant, tots tres s'instal·laran conjuntament amb l'ordre anterior.
@@ -106,7 +106,7 @@ Les opcions de muntatge més importants que es poden especificar entre parèntes
 * **\(\)**: aquesta opció estableix les opcions que l'NFS assumeix per defecte.
 * **ro**: el directori s'exporta com un sistema d'arxius només de lectura \(opció per defecte\).
 * **rw**: el directori s'exporta com un sistema d'arxius de lectura/escriptura.
-* **root\_squash**: els accessos des del client amb UID = 0 \(_root_\) es converteixen en el servidor en accessos amb UID d'un usuari anònim \(opció per defecte\).
+* **root\_squash**: els accessos des del client amb UID = 0 \(_root_\) es converteixen en el servidor en accessos amb UID d'un usuari anònim _nobody_ \(opció per defecte\).
 * **no\_ root\_squash**: es permet l'accés des d'un UID = 0 sense conversió. És a dir, els accessos d'arrel \(_root_\) en el client es converteixen en accessos d'arrel en el servidor.
 * **all\_squash**: tots els accessos des del client, amb qualsevol UID, es transformen en accessos d'usuari anònim.
 * **anonuid, anongid**: quan s'activa l'opció _root\_squash_ o _allsquash_, els accessos anònims utilitzen normalment l'UID i el GID primari de l'usuari denominat _nobody_ si aquest usuari existeix en el servidor \(opció per defecte\). Si es volen utilitzar altres formes d'identificació, els paràmetres _anonuid_ i _anongid_ estableixen, respectivament, quins UID i GID tindrà el compte anònim que el servidor utilitzarà per accedir al contingut del directori.
@@ -114,7 +114,7 @@ Les opcions de muntatge més importants que es poden especificar entre parèntes
 
 És important destacar que cada vegada que es modifica aquest fitxer, el servidor NFS s'ha d'actualitzar mitjançant l'ordre _**exportfs –ra**_ a fi que s'activin els canvis.
 
-Control NFS
+**Control NFS**
 
 El mecanisme per controlar quines màquines de la xarxa poden disposar dels fitxers compartits i quines no consistiria a utilitzar els fitxers _/etc/hosts.allow_ i _/etc/hosts.deny_.
 
@@ -148,7 +148,7 @@ El NetBIOS \(_network basic input/output system_\) és un protocol del nivell de
 
 Principalment, el NetBIOS s'utilitza per identificar amb un nom els equips connectats per mitjà de xarxes locals, amb la finalitat d'establir una sessió i mantenir la connexió entre equips de la xarxa. El NetBIOS no pot transportar per si mateix les dades entre els nodes de la LAN. Per això ha de funcionar amb altres protocols com el TCP/IP, l'IPC/IPX i el NetBEUI.
 
-El NetBIOS al Windows
+**El NetBIOS al Windows**
 
 En els sistemes Windows el protocol NetBIOS s'ha fet servir principalment per compartir arxius i impressores, i també per veure els recursos disponibles en “Entorn de xarxa”. Bona part de les crítiques de seguretat cap als entorns Windows se centren en el protocol NetBIOS. Per motius de seguretat, aquest protocol s'ha de deshabilitar sempre que no sigui imprescindible.
 
@@ -225,7 +225,7 @@ Gràcies al Samba, en una xarxa hi pot haver equips amb Windows i equips amb GNU
 
 L'avantatge principal del paquet de programari Samba és que és pràcticament equivalent a qualsevol servidor SMB/CIFS \(Windows NT o 2000, servidor Netware, servidor NFS UNIX, etc.\) i, a més, és programari lliure i gratuït. En la taula 1 es mostren els diversos rols o serveis per als quals es pot utilitzar el Samba.
 
-Taula 1. Possibles rols d'un servidor Samba
+**Taula 1. Possibles rols d'un servidor Samba**
 
 | Usos del Samba |  |
 | :--- | :--- |
