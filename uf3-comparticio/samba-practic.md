@@ -107,5 +107,15 @@ Reiniciem el servei
 # systemctl restart smbd
 ```
 
+Cal afegir un **usuari SAMBA,** debi per exemple:
 
+```text
+sudo smbpasswd -a debi
+```
+
+i el col·loquem dins el grup security
+
+```text
+usermod -aG sudo debi
+```
 
