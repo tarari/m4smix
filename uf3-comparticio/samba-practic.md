@@ -53,5 +53,21 @@ sudo systemctl restart nmbd
 
 ## Accés restringit a directori
 
+En aquest cas ens recolzem en la seguretat que donem a través dels permisos sobre fitxers i carpetes.
 
+Imagina que volem tenir una carpeta amb accés restringit, només aquells que pertanyn a un grup podran accedir-hi i amb uns permisos determinats
+
+```text
+root@smb:~# groupadd security
+root@smb:~# mkdir /home/security
+root@smb:~# chgrp security /home/security
+root@smb:~# chmod 770 /home/security
+```
+
+Creem el grup d'accés, **security** per exemple, la carpeta a la qual donarem permisos _/home/security_,  donem permisos a **root** i **security** sobre la carpeta 
+
+```text
+# ls -la /home/security
+drwxrwx---  2 root  security 4096 de març   2 15:17 security
+```
 
