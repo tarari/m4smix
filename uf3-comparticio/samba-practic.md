@@ -71,3 +71,41 @@ Creem el grup d'accés, **security** per exemple, la carpeta a la qual donarem p
 drwxrwx---  2 root  security 4096 de març   2 15:17 security
 ```
 
+Modifiquem el fitxer de configuració de samba 
+
+```text
+# pico /etc/samba/smb.conf
+```
+
+Editem i afegim línies si cal \(En pico o nano ^C per mirar el núm. de la  línia\):
+
+```text
+# línia 25, afegir
+unix charset = UTF-8
+# linia 30: canviar grup de treball 
+workgroup = WORKGROUP
+# línia 37: descomentar i canviar la IPs que permets
+interfaces = 127.0.0.0/8 10.0.0.0/24
+# línia 44: descomentar
+bind interfaces only = yes
+# afegir al final
+# el nom amb el que vols compartir la carpeta
+[Security]
+    path = /home/security
+    writable = yes
+    create mode = 0770
+    directory mode = 0770
+    # no permetem convidat
+    guest ok = no
+    # només usuaris del grup security
+    valid users = @security
+```
+
+Reiniciem el servei
+
+```text
+# systemctl restart smbd
+```
+
+
+
