@@ -18,6 +18,7 @@ sudo chmod 777 /home/shares
 Modifiquem o millor, creem de nou el fitxer de configuració de samba _/etc/samba/smb.conf_:
 
 ```text
+[Globals]
 unix charset = UTF-8
 workgroup = GRUP_TREBALL
 interfaces = 127.0.0.0/8 10.0.2.0/24
@@ -55,7 +56,7 @@ sudo systemctl restart nmbd
 
 En aquest cas ens recolzem en la seguretat que donem a través dels permisos sobre fitxers i carpetes.
 
-Imagina que volem tenir una carpeta amb accés restringit, només aquells que pertanyn a un grup podran accedir-hi i amb uns permisos determinats
+Imagina que volem tenir una carpeta amb accés restringit, només aquells que pertanyin a un grup \(aquí li diem security\) podran accedir-hi i amb uns permisos determinats
 
 ```text
 root@smb:~# groupadd security
@@ -107,9 +108,10 @@ Reiniciem el servei
 # systemctl restart smbd
 ```
 
-Cal afegir un **usuari SAMBA,** debi per exemple:
+Cal afegir un **usuari SAMBA,** debi per exemple, un usuari que també ha de ser usuari de linux :
 
 ```text
+sudo adduuser debi
 sudo smbpasswd -a debi
 ```
 
