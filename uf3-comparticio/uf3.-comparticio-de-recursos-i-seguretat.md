@@ -1053,6 +1053,41 @@ Seguidament, apareixerà un quadre en què ens demanarà el nom mitjançant el q
 
 Finalment, el sistema ens proposarà imprimir una pàgina de prova perquè puguem estar segurs que la instal·lació s'ha fet correctament.
 
+### Annex - Compartició samba Accés complet convidat 
+
+Cal modificar el fitxer  `/etc/samba/smb.conf`, tal i com s'indica:
+
+```text
+# crear  /home/share --> sudo mkdir /home/share
+# canviar permisos --> sudo chmodr 777 /home/share
+# modificar smb.conf --> sudo pico /etc/samba/smb.conf
+
+[Globals]
+
+unix charset = UTF-8
+workgroup = AS2
+interfaces= 127.0.0.1/8 10.0.2.0/24
+bind interfaces only =yes
+map to guest = Bad User
+
+#El que compartim
+[Share]
+
+  path = /home/share
+  # Es pot escriure
+  writable = yes
+  guest ok = yes
+  # només convidats, no demana usuari
+  guest only = yes
+  # accés complet
+  create mode =0777
+  # accés complet
+  directory mode =077
+
+# ja està, cal reiniciar samba --> sudo systemctl restart smbd
+
+```
+
 ### A7. Activitat a classe: Compartir recursos en sistemes lliures
 
 #### NFS i serveis associats
@@ -1071,7 +1106,7 @@ Llegeix al recurs de compartir en Linux la part de NFS.
 #### SAMBA i serveis associats
 
   
-Llegiu al recurs de compartir en Linux la part de Samba.  
+Llegiu al recurs de [compartir](uf3.-comparticio-de-recursos-i-seguretat.md#2-3-1-share-level-security) en Linux la part de Samba.  
   
 
 
