@@ -118,7 +118,7 @@ sudo smbpasswd -a debi
 i el col·loquem dins el grup security
 
 ```text
-usermod -aG sudo debi
+usermod -aG security debi
 ```
 
 ## Client en línia amb smbclient
