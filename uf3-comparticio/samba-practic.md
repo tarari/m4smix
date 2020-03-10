@@ -138,5 +138,78 @@ ii  smbclient      2:4.9.5+dfsg-5+deb10u1 amd64        command-line SMB/CIFS cli
 
 ### Comprova recursos compartits per un equip
 
+```text
+$ smbclient   -L host 
 
+
+	Sharename       Type      Comment
+	---------       ----      -------
+	print$          Disk      Printer Drivers
+	Security        Disk      
+	IPC$            IPC       IPC Service (Samba 4.9.5-Debian)
+Reconnecting with SMB1 for workgroup listing.
+
+	Server               Comment
+	---------            -------
+
+	Workgroup            Master
+	---------            -------
+	AS2                  DEBIM4
+	WORKGROUP            SRV-A
+
+```
+
+Si volem veure la llista d'usuaris completa de Samba
+
+```text
+$ sudo pdbedit -L -v
+---------------
+Unix username:        secu
+NT username:          
+Account Flags:        [U          ]
+User SID:             S-1-5-21-90188730-1240831525-1088045497-1000
+Primary Group SID:    S-1-5-21-90188730-1240831525-1088045497-513
+Full Name:            
+Home Directory:       \\debim4\secu
+
+```
+
+### Accedir a recursos a través de smb:&gt;
+
+Això és com el ftp, si ja coneixem l'usuari, podem accedir perfectament: `smbclient //equip/recurs -U usuari_samba`
+
+```text
+$ smbclient   //debiM4/Security -U secu
+Unable to initialize messaging context
+Enter AS2\secu's password: 
+Try "help" to get a list of possible commands.
+smb: \> 
+
+```
+
+Aquí teniu el llistat de comandos disponibles:
+
+```text
+Try "help" to get a list of possible commands.
+smb: \> help
+?              allinfo        altname        archive        backup         
+blocksize      cancel         case_sensitive cd             chmod          
+chown          close          del            deltree        dir            
+du             echo           exit           get            getfacl        
+geteas         hardlink       help           history        iosize         
+lcd            link           lock           lowercase      ls             
+l              mask           md             mget           mkdir          
+more           mput           newer          notify         open           
+posix          posix_encrypt  posix_open     posix_mkdir    posix_rmdir    
+posix_unlink   posix_whoami   print          prompt         put            
+pwd            q              queue          quit           readlink       
+rd             recurse        reget          rename         reput          
+rm             rmdir          showacls       setea          setmode        
+scopy          stat           symlink        tar            tarmode        
+timeout        translate      unlock         volume         vuid           
+wdel           logon          listconnect    showconnect    tcon           
+tdis           tid            utimes         logoff         ..             
+!              
+
+```
 
