@@ -121,3 +121,22 @@ i el col·loquem dins el grup security
 usermod -aG sudo debi
 ```
 
+## Client en línia amb smbclient
+
+### Instal·lació
+
+```text
+$ sudo apt install smbclient
+$ dpkg -l smbclient
+Desitjat=desconegUt/Instal·la/supRimeix/Purga/retín(H)
+| Estat=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
+|/ Err?=(none)/Reinst-required (Estat,Err: majúsc.=dolent)
+||/ Nom            Versió                 Arquitectura Descripció
++++-==============-======================-============-=========================
+ii  smbclient      2:4.9.5+dfsg-5+deb10u1 amd64        command-line SMB/CIFS cli
+```
+
+### Comprova recursos compartits per un equip
+
+
+
