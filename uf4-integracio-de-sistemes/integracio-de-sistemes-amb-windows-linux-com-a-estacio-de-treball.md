@@ -42,20 +42,20 @@ Definim la integració de sistemes com la creació d’estructures formades per 
 
 Existeixen diferents possibilitats d’integració entre sistemes lliures i propietaris per a la compartició de recursos, la possibilitat més comuna és mitjançant dominis Windows. Per implementar un domini Windows tenim diferents opcions:
 
-* Utilitzar una màquina Windows com a controlador de domini.
-* Utilitzar una màquina GNU/Linux com a controlador de domini.
+* Utilitzar una màquina Windows com a controlador de domini amb Active Directory
+* Utilitzar una màquina GNU/Linux com a controlador de domini amb Samba 4.
 
 En els dos casos anteriors els clients podran ser màquines amb sistemes Windows o GNU/Linux.
 
 En el cas d'utilitzar una màquina Windows com a controlador de domini, les màquines clients Windows no tindran cap problema per accedir al domini. Per a les màquines clients GNU/Linux, ens caldrà especificar un mecanisme d’autenticació i proporcionar la manera d'obtenir els atributs específics \(UID; GID; shell, etc.\) per a usuaris i grups. D’aquesta manera podem optar per dues solucions:
 
-**1.** No utilitzar Directori Actiu, fent servir winbind, aquesta opció ens permet:
+**1.** **No utilitzar Directori Actiu**, fent servir winbind, aquesta opció ens permet:
 
 * Resoldre l’autenticació i l’obtenció d’atributs comuns mitjançant mecanismes Windows \(Kerberos + LDAP\).
 * Integrar el client GNU/Linux com a membre del domini Windows.
 * Proporcionar atributs UNIX des del mateix client GNU/Linux quan sigui necessari.
 
-**2.** Utilitzar Directori Actiu, fent servir IDMU, aquesta opció ens permet:
+**2.** **Utilitzar Directori Actiu**, fent servir IDMU, aquesta opció ens permet:
 
 * Modificar l’esquema d'_Active Directory_ per incloure atributs UNIX.
 * Resoldre l’autenticació i l’obtenció d’atributs comuns mitjançant mecanismes Windows \(Kerberos + LDAP\).
@@ -70,13 +70,13 @@ Existeix una altra opció molt més senzilla per a la simple compartició de rec
 
  
 
-### 1.2. Integració de sistemes lliures i propietaris amb Windows 2003 Server
+### 1.2. Integració de sistemes lliures i propietaris amb Windows Server
 
 Tot i que Microsoft domina clarament el mercat domèstic, cada vegada més el sistema Linux està present a les llars compartint màquina amb una versió Windows. En el món de les supercomputadores les dades canvien: Microsoft és el segon sistema utilitzat per darrere de Linux.
 
 Des del punt de vista tècnic, el més important és saber identificar les febleses de cadascun dels sistemes i cobrir-les amb un altre sistema operatiu. És aquí on té un paper molt important saber integrar diferents sistemes operatius.
 
-Microsoft Windows Server 2003/8/12 ofereix diverses opcions d'integració vers diferents sistemes operatius, com ara les distribucions Linux o els sistemes operatius d'Apple.
+Microsoft Windows Server  ofereix diverses opcions d'integració vers diferents sistemes operatius, com ara les distribucions Linux o els sistemes operatius d'Apple.
 
  
 
@@ -151,76 +151,23 @@ La sincronització de contrasenyes:
 
 ### 1.3. Utilització d'NFS en Windows Server
 
-Windows Services For UNIX
+Windows Services For UNIX queda actualitzat a les noves versions, per tant, us recomano mirar els següents enllaços:
 
-_Windows Services For UNIX_ és un paquet que conté utilitats per reproduir diverses _Shell_ de UNIX, emular el seu comportament i proporcionar un entorn operatiu similar al d'UNIX o Linux dins de Windows Server.
+[Instal·lació de NFS](https://www.server-world.info/en/note?os=Windows_Server_2016&p=nfs&f=1)
 
-Resulta de gran utilitat utilitzar un client _NFS_ per migrar arxius d'una màquina UNIX a un servidor Windows Server. Utilitzant el client per a _NFS_ podreu accedir sense gaires problemes a una màquina UNIX.
+[Compartir en NFS en Windows](https://www.server-world.info/en/note?os=Windows_Server_2016&p=nfs&f=2)
 
-Característiques que heu de tenir en compte a l'hora d'utilitzar _NFS_ són:
+[Configurar client NFS en Windows](https://www.server-world.info/en/note?os=Windows_Server_2016&p=nfs&f=4)
 
-* S'instal·la com a part del _Role_ de servidor de fitxers amb el _Server Manager_.
-* Té suport per treballar amb màquines de 64 bits.
-* Proporciona millores de rendiment.
-* Ofereix suport a dispositius UNIX especials \(mknod\).
-* Heu de tenir en compte que determinades característiques de SFU 3.5 no estan suportades en Windows Server.
-* Proporciona _Gateway for NFS_.
-* Conté _Server for PCNFS_.
-* Conté tots els components PCNFS del client per NFS.
+
+
+\_\_
+
+#### 
 
  
 
-#### 1.3.1. Instal·lar NFS
-
-Per fer la instal·lació de l'NFS Microsoft Windows utilitza _Microsoft Installer_.
-
-Podeu instal·lar mòduls individuals o tot el producte sencer. Heu de tenir en compte que si s'han instal·lat components anteriors de _Servicios de Windows_ per UNIX, haureu d'incloure aquests components en el paràmetre _addlocal_ de la línia d'ordres d'instal·lació, separats per una coma \(,\). Si no ho feu, aquests productes s'eliminaran durant la instal·lació del client per a NFS.
-
-Per instal·lar el client per a NFS des de la línia d'ordres haureu de seguir els passos següents:
-
-1. Inicieu una sessió en l'equip amb un compte del grup dels administradors.
-2. Obriu una finestra de línia d'ordres.
-3. Introduïu al lector de DVD el disc que contingui _Windows Services for UNIX_.
-4. Escriviu a la línia d'ordres: _msiexec /I D:\sfusetup.msi /qb addlocal=“NFSClient” \[targetdir=“install path”\]_.
-5. Incloeu la clau del producte agregant _PidKey= la vostra clau_.
-
- 
-
-#### 1.3.2. Component d'NFS
-
-Els components que podeu trobar per a serveis per UNIX lligats a NFS estan directament relacionats amb els processos d'autenticació o bé en depenen. A continuació es descriuen breument aquests components:
-
-* **User Name Mapping Server**: mapa els usuaris UNIX que estan a Windows i els usuaris Windows que estan a UNIX. Si es donés el cas que un usuari té un compte d'usuari en UNIX i un en Windows, el component conté un mecanisme per relacionar-los amb una única persona.
-* **Server for NFS Authentication**: no es tracta d'un servidor, sinó d'un component necessari perquè les màquines Windows puguin fer el procés d'autenticació amb NFS.
-* **Server for PCNFS**: aquest servidor el pot utilitzar qualsevol altre NFS que necessiti accedir a PCNFS.
-* **Client for NFS**: es tracta del component client d'SFU per a NFS. El client per NFS ha d'estar a la màquina que utilitzarà el recurs NFS a la xarxa.
-* **Gateway for NFS**: es tracta d'un client NFS especial. Proporciona l'accés a recursos a altres màquines Windows que no tenen instal·lat cap component SFU.
-* **Server for NFS**: el servidor per a NFS s'instal·la en aquells equips que han de proporcionar el servei NFS a la xarxa.
-
- 
-
-#### 1.3.3. Configuració de l'ús compartit d'NFS
-
-És possible configurar NFS per compartir carpetes locals en volums NTFS utilitzant l'explorador de Windows o mitjançant d'administració d'emmagatzematge i recursos compartits. Mitjançant l'explorador de Windows podreu activar i configurar l'ús compartit d'NFS si seguiu els passos següents:
-
-1. Cliqueu amb el botó dret del ratolí a sobre del recurs compartit que vulgueu administrar.
-2. Seleccioneu _Propietats_.
-3. Dins el quadre de diàleg _Us compartit avançat d'NFS_ marqueu l'opció _Compartir aquesta carpeta_.
-4. Escriviu el nom del recurs compartit en el quadre de text _Recurs compartit_.
-5. Marqueu la casella _Permetre accés anònim_si voleu permetre l'accés anònim a aquest recurs.
-
-Els noms dels recursos compartits mitjançant _NFS_ han de ser únics per a cada sistema. El nom del recurs que indiqueu és el nom de la carpeta a la qual es connectaran els usuaris UNIX.
-
-Per defecte, els equips UNIX només disposen d'accés de lectura al recurs compartit mitjançant _NFS_. Per canviar els permisos d'accés heu de clicar, dins el quadre de diàleg _Ús compartit avançat d'NFS_, a sobre del botó _Permisos_.
-
-Si el que necessiteu és desactivar els recursos compartits amb _NFS_ heu de seguir els passos següents:
-
-1. Cliqueu amb el botó dret del ratolí a sobre del recurs compartit que vulgueu desactivar.
-2. Premeu a sobre de _Propietats_.
-3. Dins de la fitxa_Ús compartit avançat d'NFS_ elimineu la marca de la casella _Compartir aquesta carpeta_.
-4. Accepteu per tancar.
-
- 
+#### 
 
 #### 1.3.4. Administració de la funció de serveis d'arxius
 
