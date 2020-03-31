@@ -126,3 +126,5 @@ serverworld@smb:~$ id
 uid=11103(alumnes) gid=10513(domain users) groups=10513(domain users),11103(alumnes)
 ```
 
+
+
