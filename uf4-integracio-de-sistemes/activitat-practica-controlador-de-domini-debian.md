@@ -183,5 +183,12 @@ User 'debian' created successfully
 
 A part de confirmar, hem acabat creant amb les samba-tool un client, amb el que podrem iniciar sessió en Windows.
 
-Com a condició final per a aquest client Windows, dir-vos que cal afegir-lo al domini, i recordem que això significa que 
+## Accions a les estacions de treball Windows
+
+Com a condició final per a aquest client Windows, dir-vos que cal afegir-lo al domini, i recordem que això significa que:
+
+* Windows 7 o 10 ha de ser client DNS del servidor Debian \(DNS preferit\)
+* Fer les comprovacions pertinents \(**nslookup**\)
+
+Un cop unit al domini, podem iniciar sessió amb l'usuari creat.
 
