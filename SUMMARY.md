@@ -15,4 +15,5 @@
 * [Integració de sistemes operatius](uf4-integracio-de-sistemes/integracio-de-sistemes-operatius.md)
 * [Integració de sistemes amb Windows - Linux com a estació de treball](uf4-integracio-de-sistemes/integracio-de-sistemes-amb-windows-linux-com-a-estacio-de-treball.md)
 * [Activitat pràctica de Winbind](uf4-integracio-de-sistemes/activitat-practica-de-winbind.md)
+* [Activitat pràctica Controlador de domini Debian](uf4-integracio-de-sistemes/activitat-practica-controlador-de-domini-debian.md)
 
