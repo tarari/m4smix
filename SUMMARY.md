@@ -6,6 +6,7 @@
 
 * [Introducció als sistemes operatius en xarxa](uf1.-sistemes-operatius-propietaris-en-xarxa/introduccio-als-sistemes-operatius-en-xarxa.md)
 * [Windows Server](uf1.-sistemes-operatius-propietaris-en-xarxa/windows-server.md)
+* [Directrius de grup](uf1.-sistemes-operatius-propietaris-en-xarxa/directrius-de-grup.md)
 
 ## UF3 Compartició
 

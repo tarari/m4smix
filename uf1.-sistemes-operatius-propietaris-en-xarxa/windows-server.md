@@ -6,7 +6,7 @@ Un **domini** és un conjunt d’equips \(clients i sevidors\), usuaris i grups 
 
 Cada domini té un nom únic.
 
-El **controlador de domini** és una part essencial dels sistemes operatius de Microsoft. S’encarrega fonamentalment d’emmagatzemar les parelles usuari-contrasenya dels comptes d’usuari que tenen accés al domini de xarxa.
+El **controlador de domini** és una part fonamental dels sistemes operatius  servidors de Microsoft. S’encarrega  d’emmagatzemar les parelles usuari-paraula de pas dels comptes d’usuari que tenen accés al domini de xarxa, gestionant al mateix temps les autoritzacions i directrius que acompanyen l'inici de sessió.
 
-Aquest controlador centralitza la funció d’autenticar l’accés al domini
+Aquest **controlador** centralitza la funció d’autenticar i autoritzar l’accés al domini.
 
