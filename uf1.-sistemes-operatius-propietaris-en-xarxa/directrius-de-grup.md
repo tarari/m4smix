@@ -108,6 +108,8 @@ Les directrius són **heretables** i **acumulatives**:
 
 Pot ser que hi hagi comptes usuari o equip, amb **duplicitat de polítiques**.
 
+### Conflictes de directrius
+
 Per evitar conflictes, s’utilitza el següent **ordre d'aplicació**: 1. Directrius de **grup local** del equip. 2. GPOs viculades a **sites**. 3. GPOs vinculats a **dominis**. 4. GPOs vinculats a **Unitats Organitzatives de primer nivell**. 5. GPOs vinculats a **Unitats Organitzatives de segon nivell**.
 
 ## Delegació del control del GPO <a id="delegacio-del-control-del-gpo"></a>
