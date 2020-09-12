@@ -6,14 +6,14 @@
 
 #### Comptes d'usuari
 
-Hi ha dos tipus de comptes d'usuari en el sistema Microsoft Windows Server 2008:
+Hi ha dos tipus de comptes d'usuari en el sistema Microsoft Windows Server
 
 * **Comptes d'usuari de domini**: estan definits en l'Active Directory i poden accedir als recursos del domini mitjançant l'inici de sessió únic. Per crear aquests comptes, haureu d'utilitzar _Usuarios y equipos_ de l'Active Directory.
 * **Comptes d'usuari local**: estan definits en un equip local i hi tenen accés. És necessari que aquests comptes s'autentiquin abans d'accedir a recursos de xarxa. Per crear aquests comptes haureu d'utilitzar _Usuarios y grupos locales_.
 
 **Identificació de comptes**
 
-En el Microsoft Windows Server 2008, els comptes d'usuari tenen dues parts:
+En el Microsoft Windows Server, els comptes d'usuari tenen dues parts:
 
 * **Nom d'usuari**: és una etiqueta de text que identifica el compte. Els noms locals han de ser únics per a cada equip individual, haurien de ser únics en tot un domini, no poden excedir els 64 caràcters de longitud i poden contenir caràcters alfanumèrics i especials.
 * **Domini o grup de treball d'usuari**: és el domini o el grup de treball al qual pertany el compte d'usuari.
@@ -45,7 +45,7 @@ L'administració d'un sistema que contingui un gran nombre de comptes d'usuari g
 
 Un **compte de grup** està format per una sèrie de comptes d'usuari amb característiques molt semblants. Un dels avantatges de poder fer servir comptes de grup és la simplificació que comporta el fet d'utilitzar-los en l'administració de comptes.
 
-Atès que és molt usual que el nom del compte de grup es repeteixi dins d'organismes grans, l'Active Directory utilitza el format _**DOMIMI\nomdelgrup**_, que li permet diferenciar grups amb el mateix nom que pertanyen a diferents dominis.
+Atès que és molt usual que el nom del compte de grup es repeteixi dins d'organismes grans, l'Active Directory utilitza el format _**`DOMIMI\nomdelgrup`**_, que li permet diferenciar grups amb el mateix nom que pertanyen a diferents dominis.
 
 **Tipus de grups**
 
