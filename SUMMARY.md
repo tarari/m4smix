@@ -4,9 +4,14 @@
 
 ## UF1. Sistemes operatius propietaris en xarxa
 
-* [Introducció als sistemes operatius en xarxa](uf1.-sistemes-operatius-propietaris-en-xarxa/introduccio-als-sistemes-operatius-en-xarxa.md)
+* [Introducció als sistemes operatius en xarxa](uf1.-sistemes-operatius-propietaris-en-xarxa/introduccio-als-sistemes-operatius-en-xarxa/README.md)
+  * [Els sistemes de fitxers Windows](uf1.-sistemes-operatius-propietaris-en-xarxa/introduccio-als-sistemes-operatius-en-xarxa/els-sistemes-de-fitxers-windows.md)
 * [Windows Server](uf1.-sistemes-operatius-propietaris-en-xarxa/windows-server.md)
 * [Directrius de grup](uf1.-sistemes-operatius-propietaris-en-xarxa/directrius-de-grup.md)
+
+## UF2 SISTEMES OPERATIUS LLIURES EN XARXA
+
+* [Introducció ala sistemes operatius lliures en xarxa](uf2-sistemes-operatius-lliures-en-xarxa/introduccio-ala-sistemes-operatius-lliures-en-xarxa.md)
 
 ## UF3 Compartició
 
