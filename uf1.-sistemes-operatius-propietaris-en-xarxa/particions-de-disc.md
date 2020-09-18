@@ -1,10 +1,10 @@
 # Particions de disc
 
-### Introducció <a id="introducci&#xF3;"></a>
+## Introducció
 
 Actualment, els discos tenen molta capacitat d'emmagatzematge. Això permet que es puguin fer subdivisions.
 
-**Perquè crear particions?**
+### **Perquè crear particions?**
 
 * Per poder instal·lar més d'un sistema operatiu \(_Dual boot systems_\).
 * Per separar les dades del sistema de les dades dels usuaris. Els sistemes operatius inclouen **programes per gestionar les particions** amb les opcions més importants:
@@ -20,7 +20,7 @@ Però també es poden trobar altres programes, fins i tot gratuïts, amb altres 
 
 > Els sistemes més habituals per gestionar les particions són **MBR** i **GPT**.
 
-#### Particionat MBR <a id="particionat-mbr"></a>
+## Particionat MBR
 
 * Tota la informació sobre les particions es troba al final del primer sector del disc \(**MBR**\).
 * Només es poden crear **4 particions primàries**.
@@ -34,7 +34,7 @@ La **partició estesa \(**_**extended partition**_**\)** serveix per contenir **
 
 ![](../.gitbook/assets/mbr2.png)
 
-#### Particionat GPT <a id="particionat-gpt"></a>
+## Particionat GPT
 
 * Manté el sector MBR per compatibilitat però no l'utilitza.
 * La informació es troba en els 33 sectors següents al MBR.
