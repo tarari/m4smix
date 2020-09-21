@@ -73,13 +73,13 @@ Una vegada escollit l’opció d’instal·lació, cal que decidiu si fareu una 
 
 **Particionar el disc**
 
-> Com a norma general i per millora la gestió, crearem una **partició pel sistema operatiu** i una altra per les **dades**.
+> Com a norma general i per millorar la gestió, és preferible crear  una **partició pel sistema operatiu** i una altra per les **dades**.
 
 D'aquesta forma els possibles errors del sistemes operatiu no afectaran tant directament a les dades.
 
-* Amb el botó _**Nuevo**_, crear una partició d'uns 30 GB. 
+* Amb el botó _**Nuevo**_, crear una partició d'uns 35 GB. 
 * Utilitzar l'espai restant per crear una altra partició.
-* Seleccionar la partició de 20 GB per instal·lar el sistema i continuar endavant.
+* Seleccionar la partició de 15 GB per instal·lar el sistema i continuar endavant.
 
 **Assignar contrasenya de l'usuari Administrador**
 
@@ -109,10 +109,12 @@ Fer clic amb el botó secundari del ratolí sobre la icona d'inici de Windows i 
 
 Un servidor ha de tenir una **adreça IP estàtica** ja que els clients l'han de conèixer per poder accedir-hi i utilitzar els seus serveis.
 
+Podeu crear una xarxa NAT, per tal de treballar i simular una xarxa de l'escola. Per exemple una xarxa local 10.0.2.0/24. Seguiu les instruccions del [video](https://youtu.be/mq1k_xZs7es)
+
 L'adreça ha de pertànyer a la xarxa on està connectada la màquina:
 
-* **Adreça IP**
-* **Màscara**: 
+* **Adreça IP - assignada per l'administrador de xarxa**
+* **Màscara**:   **assignada per l'administrador de xarxa**
 * **Porta d'enllaç \(GW\)**:  \(l'adreça del router virtual de la xarxa NAT\)
 * **Servidors DNS**:  \(la mateixa porta d'enllaç de VirtualBox pot fer de servidor DNS o bé utilitzeu els de Google, 8.8.8.8 i 8.8.4.4\).
 
@@ -142,7 +144,7 @@ En la majoria de sistemes amb entorn gràfic, s'obrirà automàticament una fine
 
 En una màquina real, només faltaria realitzar una còpia de seguretat completa i configurar les copies de seguretat periòdiques.
 
-En el cas de les màquines virtuals, es pot fer un snapshot o copiar el disc virtual.
+En el cas de les màquines virtuals, es pot fer un **snapshot** \(vigileu les preferències del Hypervisor on es desen les imatges\) o copiar el disc virtual.
 
 Els snapshots es fan i es poden recuperar més ràpidament, però poden fer què la màquina funcioni una mica més lenta, sobre tot si el disc no és SSD. També fan què el disc virtual ocupi més espai.
 
@@ -170,11 +172,7 @@ Instal·lar noves funcionalitats o noves característiques \(rols i característ
 
 > Un servidor es pot especialitzar en una única funció o en diverses.
 
-\*\*\*\*
-
 #### Altres informacions <a id="altres-informacions"></a>
-
-\*\*\*\*
 
 A la finestra d'inici ens avisa dels dies què queden. Un cop acabat aquest període, es pot allargar 180 dies més obrint un terminal i posant la següent comanda:
 
