@@ -104,8 +104,6 @@ Les directrius són **heretables** i **acumulatives**:
 * Aquests, més el vinculats al domini són heretats per les OU de primer nivell.
 * Tots els anteriors més les GPO de les OU primer nivell són heretats per les OU de segon nivell, etc.
 
-![](https://gblobscdn.gitbook.com/assets%2F-M4uTdAUmhLr6lvCTUzA%2F-M4uTgeRKnmGFawpXWoQ%2F-M4uTkTIWynhwYEOJXjE%2Fdirectrius_herencia.png?alt=media)
-
 Pot ser que hi hagi comptes usuari o equip, amb **duplicitat de polítiques**.
 
 ### Conflictes de directrius
