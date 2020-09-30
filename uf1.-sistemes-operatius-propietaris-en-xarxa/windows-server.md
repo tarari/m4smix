@@ -239,8 +239,6 @@ Disposa de cinc pestanyes. Aquestes pestanyes us ajudaran a administrar **proces
 * **Serveis** _**\[Services\]**_: quins serveis estan engegats o aturats. Permet aturar o iniciar serveis. També es pot obrir l'administrador de serveis per gestionar els serveis de forma més detallada.
 * **Rendimient** _**\[Performance\]**_: veure la utilització global de la CPU, la memòria i la xarxa. Des d'aquest apartat es pot obrir el Monitor de recursos, que permet veure amb més detall la utilització de la CPU, la memòria, la xarxa i els discos.
 
-![](https://seicoll.gitbooks.io/sox/content/.gitbook/assets/taskmanager.png)
-
 Teniu **quatre vies per accedir** a l’administrador de tasques:
 
 * Combinar les tecles _**Control, Majúscules i Esc**_.
@@ -258,15 +256,11 @@ L'eina _**Serveis**_ mostra l'estat dels serveis i permet gestionar-los.
 
 Cada servei el podem configurar: Ens posem a sobre &gt; boto dret ratolí &gt; propietats:
 
-![](https://seicoll.gitbooks.io/sox/content/.gitbook/assets/services.png)
-
 #### **Configuració d'inici d'un servei**
 
 És important que feu la **configuració d’inici** dels serveis més escaient.
 
 > Que un servei estigui instal·lat no vol dir que s'estigui executant.
-
-![](https://seicoll.gitbooks.io/sox/content/.gitbook/assets/sevicesstart.png)
 
 Existeixen quatre **tipus d’arrencada d’un servei**:
 
@@ -280,8 +274,6 @@ Existeixen quatre **tipus d’arrencada d’un servei**:
 #### **Configuració de la recuperació d'un servei**
 
 El sistema Microsoft Windows Server permet fer accions si detecta que un servei específic falla.
-
-![](https://seicoll.gitbooks.io/sox/content/.gitbook/assets/serveisrecuperacio.png)
 
 #### Existeixen tres opcions de **recuperació d’un servei**:
 
@@ -306,8 +298,6 @@ Els principals són:
   * Sistema
 * Registres d'aplicacions i serveis
   * Esdeveniments de hardware
-
-![](https://seicoll.gitbooks.io/sox/content/.gitbook/assets/eventviewer.png)
 
 ### Actualitzacions <a id="actualitzacions"></a>
 
@@ -341,7 +331,7 @@ En el **Windows Update** \(en Windows Server 2016 i Windows 10\) podem configura
   * **Ofrecer actualizaciones para otros productos de Microsoft cuando actualice Windows**. Permet mantenir actualitzades la resta d'aplicacions que hàgim adquirit de Microsoft al mateix temps que actualitzem el sistema operatiu.
   * **Aplazar actualizaciones de características**. Permet deixar d'instal·lar aplicacions del sistema operatiu que no tinguin a veure amb la seguretat. Això redueix els temps necessari en instal·lar actualitzacions, però deixes de disposar de les últimes funcions que s'incorporin al sistema operatiu.
 
-#### Cas d'exemple: Impedir actualitzacions a Windows <a id="cas-dexemple-impedir-actualitzacions-a-windows"></a>
+### _**Cas d'exemple: Impedir actualitzacions a Windows**_
 
 Com s'ha pogut veure, amb l'arribada de **Windows 10** el servei d'actualitzacions va fer un canvi significatiu de paradigma. Es va pensar més en els usuaris inexperts que no pas en els professionals. S'ha volgut evitar que per manca de coneixement o d'atenció, es deixi d'actualitzar el sistema amb el gran risc de seguretat que pot comportar.
 
