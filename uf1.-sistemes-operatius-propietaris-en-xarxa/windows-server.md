@@ -217,7 +217,7 @@ El sistema operatiu Microsoft Windows Server us proporciona una sèrie d’**ein
 
 L'**Administrador del servidor** permet veure, en una única pantalla, la informació del sistema, opcions de configuració de seguretat i els seus possibles problemes de configuració.
 
-![](https://seicoll.gitbooks.io/sox/content/.gitbook/assets/servermanager.png)
+![Administrador de servidor](../.gitbook/assets/adm_servidor.png)
 
 L'**Administrador del servidor**, amb una única eina, permet als administradors:
 
