@@ -345,6 +345,8 @@ En el nostre cas una actualització forçada ens podria destorbar durant la real
 
 El servei responsable de les actualitzacions de Windows s'anomena _**wuausrv**_ però en l'_Administrador de serveis_ el podrem trobar com _**Windows Update**_. A partir d'aquí només haurem de deshabilitar el servei.
 
+![Servei d&apos;actualitzacions wuauserv](../.gitbook/assets/wuauserv.png)
+
 _**Administrador de serveis &gt; "Windows Update" &gt; Propietats &gt; Tipus d'inici &gt; Escollir Deshabilitat**_ _**Administrador de serveis &gt; "Windows Update" &gt; Propietats &gt; Estat del servei &gt; Detenir**_
 
 **B\) Deshabilitar la directiva de grup \(GPO\) responsable de les actualitzacions**
