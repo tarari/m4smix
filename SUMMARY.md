@@ -8,9 +8,8 @@
   * [Els sistemes de fitxers Windows](uf1.-sistemes-operatius-propietaris-en-xarxa/introduccio-als-sistemes-operatius-en-xarxa/els-sistemes-de-fitxers-windows.md)
 * [Particions de disc](uf1.-sistemes-operatius-propietaris-en-xarxa/particions-de-disc.md)
 * [Windows Server](uf1.-sistemes-operatius-propietaris-en-xarxa/windows-server/README.md)
+  * [Directrius de grup](uf1.-sistemes-operatius-propietaris-en-xarxa/windows-server/directrius-de-grup.md)
   * [Usuaris i grups en Windows Server](uf1.-sistemes-operatius-propietaris-en-xarxa/windows-server/usuaris-i-grups-en-windows-server.md)
-* [Gestió de  dominis](uf1.-sistemes-operatius-propietaris-en-xarxa/gestio-de-dominis.md)
-* [Directrius de grup](uf1.-sistemes-operatius-propietaris-en-xarxa/directrius-de-grup.md)
 
 ## UF2 SISTEMES OPERATIUS LLIURES EN XARXA
 
