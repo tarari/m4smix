@@ -10,10 +10,11 @@
 * [Windows Server](uf1.-sistemes-operatius-propietaris-en-xarxa/windows-server/README.md)
   * [Directrius de grup](uf1.-sistemes-operatius-propietaris-en-xarxa/windows-server/directrius-de-grup.md)
   * [Usuaris i grups en Windows Server](uf1.-sistemes-operatius-propietaris-en-xarxa/windows-server/usuaris-i-grups-en-windows-server.md)
+  * [Powershell i AD](uf1.-sistemes-operatius-propietaris-en-xarxa/windows-server/powershell-i-ad.md)
 
 ## UF2 SISTEMES OPERATIUS LLIURES EN XARXA
 
-* [Introducció ala sistemes operatius lliures en xarxa](uf2-sistemes-operatius-lliures-en-xarxa/introduccio-ala-sistemes-operatius-lliures-en-xarxa.md)
+* [Introducció als sistemes operatius lliures en xarxa](uf2-sistemes-operatius-lliures-en-xarxa/introduccio-ala-sistemes-operatius-lliures-en-xarxa.md)
 
 ## UF3 Compartició
 

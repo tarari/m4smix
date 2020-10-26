@@ -1,2 +1,2 @@
-# Introducció ala sistemes operatius lliures en xarxa
+# Introducció als sistemes operatius lliures en xarxa
 
