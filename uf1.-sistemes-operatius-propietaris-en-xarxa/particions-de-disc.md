@@ -2,7 +2,7 @@
 
 ## Introducció
 
-Actualment, els discos tenen molta capacitat d'emmagatzematge. Això permet que es puguin fer subdivisions.
+Actualment, els discos tenen molta capacitat d'emmagatzematge. Això permet que es puguin fer subdivisions, i al mateix temps instal·lar-hi diferents sistemes de fitxers segons les necessitats.
 
 ### **Perquè crear particions?**
 
@@ -45,5 +45,5 @@ La **partició estesa \(**_**extended partition**_**\)** serveix per contenir **
 
 ![](../.gitbook/assets/parti.png)
 
-En l'espai lliure encara es poden crear moltes particions més.
+En l'**espai lliure** encara es poden crear moltes particions més.
 
