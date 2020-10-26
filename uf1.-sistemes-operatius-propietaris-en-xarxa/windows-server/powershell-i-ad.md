@@ -61,14 +61,14 @@ També pots utilitzar PowerShell per modificar el domini d'Active Directory. Usa
 
 | comando | Què fa | categoria |
 | :--- | :--- | :--- |
-| Disable-ADaccount -identity The-Solving | Deshabilita el compte The-Solving | USUARIS |
-| Enable-ADaccount -identity The-Solving | Habilita el compte The-Solving | USUARIS |
-| Set-ADAccountExpiriation -Identity The-Solving -datetime "07/01/2019" | Configura el compte The-Solving perquè expiri el 7 de gener de 2019 | USUARIS |
-| Clear-ADAccountExpiration -identity The-Solving | Desactiva la data de caducitat del compte | USUARIS |
-| Set-ADAccountPassword -identity The-Solving -reset -newpassword \(Convertto-Securestring -asplaintext "Passw0rd123!" -Force\) | Canvia la contrasenya d'usuari xifrant la transmissió - essencial | USUARIS |
-| Unlock-ADAccount -identity The-Solving | Desbloqueja el compte The-Solving | USUARIS |
-| New-AdGroup -Name "Test Users" -SamAccountName TestUser -GroupCategory Security -GroupScope Global -displayname 'Test Users' -Path "OU = Groups, OU = Resources, DC = TEST, DC = UK -Description" All Test Users " | Crea un grup de seguretat anomenat Test Users a OU Groups&gt; Resources | GRUPS |
-| Set-ADGroup -Identity 'Test Users' -groupcategory Distribution -groupscope Universal -Managedby 'TurboGeek' | Modifica el grup Test Users i el converteix en un grup universal de distribució, administrat per tu | GRUPS |
-| search-adaccount -lockedout \| unlock-adaccount -passthru -confirm | Troba i desbloqueja tots els comptes "locked" en Active Directory. Una solució senzilla i eficaç per desbloquejar un grup. | USUARIS |
+| `Disable-ADaccount -identity alumne` | Deshabilita el compte alumne | USERS |
+| `Enable-ADaccount -identity alumne` | Habilita el compte alumne | USERS |
+| `Set-ADAccountExpiriation -Identity alumne -datetime "07/01/2019"` | Configura el compte alumne perquè expiri el 7 de gener de 2019 | USERS |
+| `Clear-ADAccountExpiration -identity alumne` | Desactiva la data de caducitat del compte | USERS |
+| `Set-ADAccountPassword -identity alumne -reset -newpassword (Convertto-Securestring -asplaintext "Passw0rd123!" -Force)` | Canvia la contrasenya d'usuari xifrant la transmissió - essencial | USERS |
+| `Unlock-ADAccount -identity alumne` | Desbloqueja el compte alumne | USERS |
+| `New-AdGroup -Name "Test Users" -SamAccountName TestUser -GroupCategory Security -GroupScope Global -displayname 'Test Users' -Path "OU = Groups, OU = Resources, DC = TEST, DC = UK -Description" All Test Users "` | Crea un grup de seguretat anomenat Test Users a OU Groups&gt; Resources | GROUPS |
+| `Set-ADGroup -Identity 'Test Users' -groupcategory Distribution -groupscope Universal -Managedby 'profe'` | Modifica el grup Test Users i el converteix en un grup universal de distribució, administrat per profe | GROUPS |
+| `search-adaccount -lockedout | unlock-adaccount -passthru -confirm` | Troba i desbloqueja tots els comptes "locked" en Active Directory. Una solució senzilla i eficaç per desbloquejar un grup. | USERS |
 |  |  |  |
 
