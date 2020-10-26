@@ -14,18 +14,18 @@ Com la llista d'ordres és bastant gran, hem agrupat per categories els cmdlets 
 
 ## **Consulta d'usuaris**
 
-Consultar els comptes d'usuari és molt senzill en PowerShell. Els comandaments de la taula següent expliquen com buscar usuaris, identificar aquells amb contrasenyes no compatibles, bloquejats, deshabilitats, etc.
+Consultar els comptes d'usuari és molt senzill en PowerShell. Els comandos  de la taula següent expliquen com buscar usuaris, identificar aquells amb contrasenyes no compatibles, bloquejats, deshabilitats, etc.
 
 | comando PowerShell | Què fa | categoria |
 | :--- | :--- | :--- |
-| _`Get-ADUser -Filter * -Properties * | on {$ _. whenCreated -ge $ week} | seleccioneu Nom, quan es crea | Ordena el nom`_ | Usuaris creats en l'última setmana, ordenats per nom | USERS |
-| _`Get-ADUser -Filter * -Properties PasswordNeverExpires | on {$ _. PasswordNeverExpires -eq $ true} | seleccioneu Nom | ordena Nom`_ | Usuaris amb contrasenya configurada "sense caducitat", ordenats per nom | USUARIS |
-| _`Get-ADUser -Filter “Activat -eq '$ false'” | Seleccioneu Name, UserPrincipalName | Ordena el nom`_ | Usuaris amb comptes INACTIVES, mostra els noms i els FQN \(noms certificats\), ordenats per nom | USUARIS |
-| _`Search-ADAccount -AccountDisabled -UsersOnly | Nom FT, ObjectClass -A`_ | Usuaris amb comptes deshabilitades, mostra els noms i els FQN, ordenats per nom | USUARIS |
-| _`Search-ADAccount -LockedOut | Format-Nom de la taula, lastlogondate, lockedout, objectclass, passwordexpired, passwordneverexpires`_ | Troba usuaris amb el compte bloquejat | USUARIS |
-| _`Search-ADAccount -AccountInactive -TimeSpan 90.00: 00: 00 -UsersOnly | Ordena-objecte | Nom FT, ObjectClass -A`_ | Troba els comptes d'usuaris que no han estat utilitzades durant 90 dies | USUARIS |
-| _``Get-ADuser -Filter {name -like "*"} -properties * | select @ {N = ”Compte”; E = {$ _. Name}}, @ {N = ”Name”; E = {$ _. givenname}}, @ {N = ”LastName”; E = {$ _. cognom}}, @ {N = ”Mail”; E = {$ _. mail}}, @ {N = ”AccountEnabled”; E = {$ _. enabled}}, @ {N = ”MemberOf”; E = {(Get-ADPrincipalGroupMembership $ _). name -join (“` r`n ”,” ,,,,, ”)}} | "Compte" d'objecte d'ordenació | FT -AutoSize``_ | Grups de pertinença per a tots els usuaris. Ordena les dades en forma de taula. Usa Export-CSV per tornar un fitxer CSV. | USERS |
-| `Get-ADUser -Filter * -Properties LastLogonDate | ? {$ _. LastLogonDate -eq $ null} | Seleccioneu nom, nom de compte` | Troba els usuaris que no han iniciat mai la sessió | USERS |
+| _Get-ADUser -Filter \* -Properties \* \| where { $\_.whenCreated -ge $week } \| select Name,whenCreated \| Sort Name_ | Usuaris creats en l'última setmana, ordenats per nom | USERS |
+| _Get-ADUser -Filter \* -Properties PasswordNeverExpires \| where { $\_.PasswordNeverExpires -eq $true } \| select Name \| sort Name_ | Usuaris amb contrasenya configurada "sense caducitat", ordenats per nom | USUARIS |
+| _Get-ADUser -Filter “Enabled -eq ‘$false'” \| Select Name, UserPrincipalName \| Sort name_ | Usuaris amb comptes INACTIVES, mostra els noms i els FQN \(noms certificats\), ordenats per nom | USUARIS |
+| _Search-ADAccount -AccountDisabled -UsersOnly \| FT Name,ObjectClass -A_ | Usuaris amb comptes deshabilitades, mostra els noms i els FQN, ordenats per nom | USUARIS |
+| _Search-ADAccount -LockedOut \| Format-Table name,lastlogondate, lockedout, objectclass, passwordexpired, passwordneverexpires_ | Troba usuaris amb el compte bloquejat | USUARIS |
+| _Search-ADAccount -AccountInactive -TimeSpan 90.00:00:00 -UsersOnly \|Sort-Object \| FT Name,ObjectClass -A_ | Troba els comptes d'usuaris que no han estat utilitzades durant 90 dies | USUARIS |
+| _Get-ADuser -Filter {name -like “\*”} -properties \*\|select @{N=”Account”;E={$\_.name}},@{N=”Name”;E={$\_.givenname}},@{N=”LastName”;E={$\_.surname}},@{N=”Mail”;E={$\_.mail}},@{N=”AccountEnabled”;E={$\_.enabled}},@{N=”MemberOf”;E={\(Get-ADPrincipalGroupMembership $\_\).name -join \(“\`r\`n”,”,,,,,”\)}} \| Sort-Object “Account” \| FT -AutoSize_ | Grups de pertinença per a tots els usuaris. Ordena les dades en forma de taula. Usa Export-CSV per tornar un fitxer CSV. | USERS |
+| Get-ADUser -Filter \* -Properties LastLogonDate \| ? { $\_.LastLogonDate -eq $null } \| Select name,samaccountname | Troba els usuaris que no han iniciat mai la sessió | USERS |
 
 
 
