@@ -35,10 +35,10 @@ La pertinença a un grup d'Active Directory té importants repercussions en la s
 
 | comando | Què fa | categoria |
 | :--- | :--- | :--- |
-| `get-adgroup -filter * -Properties GroupCategory | Seleccioneu el nom, la categoria del grup | FT -A` | Tots els grups presents en Active Directory | GROUPS |
-| `Get-ADGroupMember -identity “Administradors” -recursiu | seleccioneu el nom` | Tots els usuaris de el grup Administradors de domini \(Domain Administrators\) | GROUPS |
+| `get-adgroup -filter * -Properties GroupCategory | Select name, groupcategory | FT -A` | Tots els grups presents en Active Directory | GROUPS |
+| `Get-ADGroupMember -identity “Administrators” -recursive | select name` | Tots els usuaris de el grup Administradors de domini \(Domain Administrators\) | GROUPS |
 | `Get-ADPrincipalGroupMembership -identity Turbogeek | Sort-object | FT -property name, samaccountname -AutoSize` | Troba els grups als quals pertany un usuari | GROUPS |
-| Get-ADGroupMember -Administradors de dominis d’identitat ”-Recursius \| % {Get-ADUser -Identity $ \_. DistinctionName -Properties activat \| ? {$ \_. Activat -eq $ false}} \| Seleccioneu Nom distingit, Activat | Troba els usuaris deshabilitats en el grup Administradors de domini | GRUPS |
+| `Get-ADGroupMember -Identity Domain Admins” -Recursive | %{Get-ADUser -Identity $`_`.distinguishedName -Properties Enabled | ?{$`_`.Enabled -eq $false}} | Select DistinguishedName,Enabled` | Troba els usuaris deshabilitats en el grup Administradors de domini | GROUPS |
 
 ## **Consulta de la infraestructura d'Active Directory**
 
