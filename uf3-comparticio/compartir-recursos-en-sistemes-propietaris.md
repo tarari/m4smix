@@ -29,9 +29,13 @@ L’accés i la seguretat dels directoris i arxius d’un equip amb Windows 2008
 
 Els dos últims varien més freqüentment i repercuteixen bastant més que els altres dos sobre l’administració de la xarxa.
 
+{% hint style="info" %}
 #### Compartir una carpeta o directori
 
          ---&gt;**EQUIVAL A FER VISIBLE A  LA XARXA UNA CARPETA O DIRECTORI**
+{% endhint %}
+
+#### 
 
 #### La compartició i la seguretat
 
