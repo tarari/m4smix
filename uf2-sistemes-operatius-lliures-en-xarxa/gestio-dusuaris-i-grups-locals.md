@@ -28,5 +28,31 @@ Els identificadors dels usuaris del sistema solen estar entre el 0 \(identificad
 **Es poden veure els usuaris del sistema amb la comanda `getent passwd.`**  
 {% endhint %}
 
+## **Grups d’usuaris locals en Linux** 
+
+Els grups serveixen per facilitar la gestió de permisos dels usuaris.
+
+Assignant permisos a un grup, s'assignen a tots els usuaris que hi pertanyen.
+
+### Grups per defecte
+
+Els grups més importants que inclou Linux per defecte són:
+
+* **root**: grup al que pertany l'usuari root \(l'administrador del sistema\).
+* **nogroup**: grup al que pertany l'usuari nobody \(usuari anònim o convidat\).
+* **sudo**: grup dels usuaris que poden executar la comanda sudo.
+  * L'usuari principal, el que es crea al instal·lar el sistema, pertany a aquest grup.
+
+Cada grup té un identificador \(un número\).
+
+Normalment, els identificadors dels grups del sistema estan entre el 0 \(aquest és l'identificador del grup root\) i el 999.
+
+Els identificadors de grups creats posteriorment comencen a partir del 1000.  
+
+
+{% hint style="info" %}
+**Es poden veure els grups del sistema amb la comanda `getent group`.**  
+{% endhint %}
+
 
 
