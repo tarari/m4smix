@@ -80,3 +80,23 @@ Només el root té permís d'escriptura. La resta d'usuaris i grups només el po
 
 
 
+###  **/etc/shadow**
+
+Conté les contrasenyes encriptades dels usuaris i altres informacions, com per exemple l'última data en què es va canviar la contrasenya.
+
+Només l'usuari root té permís d'escriptura. Només el grup shadow té permís de lectura. La resta d'usuaris i grups no tenen cap permís.
+
+### **/etc/group**
+
+Conté informació sobre els grups. Cada camp està separat per :
+
+Només el root té permís d'escriptura. La resta d'usuaris i grups només el poden llegir.
+
+`profes:x:2000:usuari,director`
+
+* profes és el  nom del grup.
+* Una x en el segon camp indica que la contrasenya es troba en l'arxiu /etc/gshadow.
+* El tercer camp \(2000\) és l'identificador del grup.
+* El quart camp conté els noms dels usuaris que tenen aquest grup com a grup secundari.
+* Els usuaris que tenen aquest grup com a grup principal no apareixen aquí.
+
