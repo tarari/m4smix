@@ -100,3 +100,26 @@ Només el root té permís d'escriptura. La resta d'usuaris i grups només el po
 * El quart camp conté els noms dels usuaris que tenen aquest grup com a grup secundari.
 * Els usuaris que tenen aquest grup com a grup principal no apareixen aquí.
 
+### **/etc/gshadow**
+
+Conté les contrasenyes encriptades dels grups.Només l'usuari root té permís d'escriptura. Només el grup shadow té permís de lectura.
+
+### **/etc/sudoers**
+
+Per editar-lo cal utilitzar la comanda sudo visudo:
+
+**`sudo visudo`**
+
+Conté informació sobre els drets i privilegis dels usuaris.La seva principal utilitat és afegir grups o usuaris que puguin actuar com a administradors \(que puguin utilitzar la comanda sudo\).
+
+Només el root pot llegir-lo. La resta d'usuaris i grups no tenen cap permís.Per defecte, aquest arxiu conté les següents línies, que serveixen per donar permís al root i als usuaris del grup sudo per executar qualsevol comanda amb permisos d'administrador \(utilitzant sudo\).
+
+```text
+# User privilege specification
+root ALL=(ALL:ALL) ALL
+# Allow members of group sudo to execute any command
+%sudo ALL=(ALL:ALL) ALL
+```
+
+
+
