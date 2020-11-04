@@ -15,6 +15,7 @@
 ## UF2 SISTEMES OPERATIUS LLIURES EN XARXA
 
 * [Introducció als sistemes operatius lliures en xarxa](uf2-sistemes-operatius-lliures-en-xarxa/introduccio-ala-sistemes-operatius-lliures-en-xarxa.md)
+* [Gestió d'usuaris i grups locals](uf2-sistemes-operatius-lliures-en-xarxa/gestio-dusuaris-i-grups-locals.md)
 
 ## UF3 Compartició
 
