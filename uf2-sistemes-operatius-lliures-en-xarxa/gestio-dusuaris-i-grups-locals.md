@@ -121,5 +121,28 @@ root ALL=(ALL:ALL) ALL
 %sudo ALL=(ALL:ALL) ALL
 ```
 
+## Gestió d'usuaris
+
+A GNU/Linux hi trobem   3 tipus d'usuaris:
+
+### Usuari Normal 
+
+* Cada usuari té la seva carpeta personal.
+* El seu directori arrel és `/home/<username>`.
+* Exemples: **raul, sergi, mrodriguez**, etc.
+
+### Usuaris de Sistema
+
+* Són usuaris propis del sistema necessaris per algunes tasques que ha de realitzar el SO.
+* Aquest tipus d'usuari no pot ingressar al sistema amb un login interactiu
+* Exemples: mail, ftp, bin, sys, proxy, etc.
+
+### Usuari root \(superusuari\)
+
+* Tot sistema operatiu GNU/Linux té un superusuari.
+* Té els màxims privilegis que li permetran efectuar qualsevol operació sobre el sistema.
+* És més segur treballar habitulament amb un usuari normat.
+* El seu directori arrel és `/root` i el seu número d’usuari \(UID\) és 0. 
+
 
 
