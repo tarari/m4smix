@@ -54,5 +54,29 @@ Els identificadors de grups creats posteriorment comencen a partir del 1000.
 **Es poden veure els grups del sistema amb la comanda `getent group`.**  
 {% endhint %}
 
+## **Fitxers d’usuaris i grups** 
+
+{% hint style="info" %}
+**ATENCIÓ: els següents arxius no s'haurien d'editar mai manualment!**
+
+**Per fer qualsevol modificació s'han d'utilitzar les comandes corresponents.**  
+{% endhint %}
+
+### **/etc/passwd**
+
+Conté informació sobre els usuaris. Cada línia és un usuari i cada camp està separat per dos punts \(:\).
+
+Només el root té permís d'escriptura. La resta d'usuaris i grups només el poden llegir.
+
+`usuari:x:1000:2000:usuari local,,,:/home/usuari:/bin/bash`
+
+* usuari és el nom del compte d'usuari \(login\).
+* Una x en el segon camp indica que la contrasenya es troba en l'arxiu /etc/shadow.
+* El tercer camp \(1000\) és l'identificador d'usuari.
+* El quart camp \(2000\) és l'identificador del grup principal.
+* Nom complet de l'usuari i altres informacions.
+* /home/usuari és el directori personal de l'usuari.
+* /bin/bash és l'intèrpret de comandes per defecte.
+
 
 
