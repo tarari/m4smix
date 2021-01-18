@@ -4,7 +4,7 @@
 
 ### Compartir recursos en sistemes propietaris
 
-### FAT i NTFS
+### Els sistemes d'arxiu FAT i NTFS
 
 El Windows  Server proporciona dos tipus de sistema de format i d’arxius FAT 32 i NTFS 5.0 i posteriors
 
@@ -16,7 +16,7 @@ Els dos sistemes poden conviure en un o en més discs durs. Es diu que NTFS és 
 
 Les últimes actualitzacions del Windows incorporen FAT 32, que permeten gestionar discs durs més grans de 2 Gb.
 
-El Windows Server 2008 ofereix la versió NTFS 5.0 que incorpora entre altres possibilitats la definició de **quota de disc** i l’encriptació d’arxius mitjançant clau pública/privada.
+El Windows Server ofereix a partir de  la versió NTFS 5.0 que incorpora entre altres possibilitats la definició de **quota de disc** i **l’encriptació** d’arxius mitjançant clau pública/privada.
 
 #### L’accés als directoris
 
@@ -149,15 +149,15 @@ Ja es pot accedir als recursos compartits si es disposa dels permisos
 
 També es pot accedir a través de la seva ruta UNC:
 
-\\\Servidor\RecursCompartit
+\\Servidor\RecursCompartit
 
 **Connexió a un directori o unitat des d’una estació**
 
-**Des del Windows 7**
+**Des del Windows 7-10**
 
 Un directori d’un servidor pot aparèixer a l’Explorador d’una estació com si fos una unitat local. Això és útil quan s’utilitza des de la xarxa de forma continuada.
 
-* Accediu a una estació amb Windows 7
+* Accediu a una estació amb Windows 7-10
 * Seleccioneu la icona de xarxa i feu clic sobre el botó dret del ratolí.
 * Activeu l’opció Assignar a unitat de xarxa.
 * A la persiana d’unitat veieu si existeix alguna connexió.
@@ -168,7 +168,7 @@ Un directori d’un servidor pot aparèixer a l’Explorador d’una estació co
 * Activeu la casella de forma que es torni a connectar a l’inici de sessió.
 * Comproveu que es veu com la unitat T
 
-**Des del Windows 2008**
+**Des del Windows Server**
 
 Inicialment el procés és el mateix llevat de l’assistent que proporciona i les dues opcions:
 
@@ -202,7 +202,7 @@ Abans de continuar heu de deixar de compartir el directori i desconnectar la uni
 
 **Directoris amb compartició especial des d’una estació \(veure més endavant\)**
 
-* Des de l’estació accediu com a administrador amb el compte super a Inicio\|Executar i executeu \\Serv, observeu com accediu al servidor.
+* Des de l’estació accediu com a administrador amb el compte super a Inicio\|Executar i executeu **\\Serv**, observeu com accediu al servidor.
 * Observeu que un dels directoris al qual teniu accés és NETLOGON.
 
 Si es pot visualitzar és que està compartit.
