@@ -885,7 +885,7 @@ El CUPS es basa en el protocol IPP \(_Internet printing protocol_, protocol d'im
 
 ![Esquema](https://agora.xtec.cat/escolesnuria/moodle/file.php/102//uf3/t2/CUPSeSQUEMA.png)
 
-Esquema CUPS
+### Esquema CUPS
 
 La gran majoria de distribucions GNU/Linux utilitzen el CUPS com a sistema d'impressió per defecte.
 
@@ -963,13 +963,9 @@ El CUPS fa servir el PPD per a totes les seves impressores. Redirigint la sortid
 
 **2. Configuració del servidor per compartir impressores i fer que siguin visibles per mitjà de la xarxa**. Per tal que les màquines de la xarxa local pugin accedir a les impressores que gestiona el servidor CUPS, és a dir, per tal que el servidor comparteixi les impressores, haurem de seleccionar, en la secció _Server_ de la pestanya _Administration_, les opcions _**Show printers shared by other systems**_ \(d'aquesta manera ens mostrarà les impressores per mitjà de la xarxa\) i _**Share published printers connected to this system**_ \(d'aquesta manera ens permetrà compartir impressores públiques connectades al sistema\). Si es pot accedir al servidor des d'Internet i volem que es pugui imprimir, marcarem l'opció _**Allow printing from Internet**_.
 
-Per altra banda, si volem administrar remotament el servidor, és a dir, accedir a la configuració via web des d'un altra màquina, haurem de marcar l'opció _**Allow remote administration**_, que també és en la secció _Server_ de la pestanya _Administration_. Es mostra en la figura 14.
+Per altra banda, si volem administrar remotament el servidor, és a dir, accedir a la configuració via web des d'un altra màquina, haurem de marcar l'opció _**Allow remote administration**_, que també és en la secció _Server_ de la pestanya _Administration_. 
 
-Figura 14. Exemple de secció Server de CUPS
-
-**3. Configuració del client per detectar i utilitzar les impressores compartides pel servidor CUPS**. Per tal que el client utilitzi les impressores remotes instal·lades en el servidor CUPS, des de l'Ubuntu, instal·lat en la màquina client, anirem al menú _**Sistema**_ **&gt;** _**Administració**_ **&gt;** _**Impressió**_. En seleccionar l'opció _Impressió_ del menú, apareixerà una pantalla en què ens mostrarà les impressores que ja tenim configurades. En aquesta pantalla haurem de seleccionar la icona _**Nou**_ **&gt;** _**Impressora**_. Aleshores començarà un procés de cerca de les impressores que detecti l'equip. Al final d'aquest procés se'ns obrirà el quadre _**Impressora nova**_ que veiem en la figura 20.
-
-Figura 15. Quadre per afegir una impressora nova
+**3. Configuració del client per detectar i utilitzar les impressores compartides pel servidor CUPS**. Per tal que el client utilitzi les impressores remotes instal·lades en el servidor CUPS, des de l'Ubuntu, instal·lat en la màquina client, anirem al menú _**Sistema**_ **&gt;** _**Administració**_ **&gt;** _**Impressió**_. En seleccionar l'opció _Impressió_ del menú, apareixerà una pantalla en què ens mostrarà les impressores que ja tenim configurades. En aquesta pantalla haurem de seleccionar la icona _**Nou**_ **&gt;** _**Impressora**_. Aleshores començarà un procés de cerca de les impressores que detecti l'equip. Al final d'aquest procés se'ns obrirà el quadre _**Impressora nova**_
 
 Si ens ha detectat la impressora que volem instal·lar, només caldrà que premem el botó _**Endavant**_.
 
@@ -1035,9 +1031,7 @@ En el quadre de text smb especificarem les dades corresponents amb el format seg
 smb://[grup_de_treball]nom_o_ip_servidor[:port]/nom_impressora
 ```
 
-A continuació, determinarem si cal que, a l'hora d'imprimir, el sistema demani les dades d'autenticació a l'usuari o utilitzi les dades especificades en aquesta pantalla \(figura 18\).
-
-Figura 18. Pantalla de configuració d'una impressora nova al client
+A continuació, determinarem si cal que, a l'hora d'imprimir, el sistema demani les dades d'autenticació a l'usuari o utilitzi les dades especificades en aquesta pantalla 
 
 Una vegada especificats els paràmetres de la impressora que volem instal·lar, premerem el botó _**Endavant**_.
 
@@ -1053,9 +1047,15 @@ Seguidament, apareixerà un quadre en què ens demanarà el nom mitjançant el q
 
 Finalment, el sistema ens proposarà imprimir una pàgina de prova perquè puguem estar segurs que la instal·lació s'ha fet correctament.
 
-```
+## Activitats
 
-```
+### A6. Compartir en dominis AD
+
+En aquesta activitat, desenvolupem la simulació d'un domini en Windows Server i clients Windows 7 i 10.
+
+Es tracta d'aplicar les regles de compartició AGLR \(compte -&gt;grup global -&gt;grup local -&gt; recurs\).
+
+Per una explicació teòrica del procediment, seguiu aquest enllaç: [AGLR](https://docs.google.com/presentation/d/1jgDdY2rZJY5TqpvBTGO9Jxc_ukgxdmUncP7pVy16WDk/edit?usp=sharing)
 
 ### A7. Activitat a classe: Compartir recursos en sistemes lliures
 
