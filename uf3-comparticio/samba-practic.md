@@ -78,10 +78,10 @@ Modifiquem el fitxer de configuració de samba
 # pico /etc/samba/smb.conf
 ```
 
-Editem i afegim línies si cal \(En pico o nano ^C per mirar el núm. de la  línia\):
+Editem i afegim línies si cal \(En pico o nano **^C** per mirar el núm. de la  línia\):
 
 ```text
-# línia 25, afegir
+# línia 25 del smb.conf, afegir
 unix charset = UTF-8
 # linia 30: canviar grup de treball 
 workgroup = WORKGROUP
@@ -111,11 +111,11 @@ Reiniciem el servei
 Cal afegir un **usuari SAMBA,** debi per exemple, un usuari que també ha de ser usuari de linux :
 
 ```text
-sudo adduuser debi
+sudo adduser debi
 sudo smbpasswd -a debi
 ```
 
-i el col·loquem dins el grup security
+i el col·loquem dins el grup  secundari **security**
 
 ```text
 usermod -aG security debi
