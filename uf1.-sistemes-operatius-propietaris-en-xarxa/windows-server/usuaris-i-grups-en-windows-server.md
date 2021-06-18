@@ -1,7 +1,5 @@
 # Usuaris i grups en Windows Server
 
-
-
 ## Comptes d'usuari
 
 Bàsicament hi ha dos tipus de comptes d'usuari en el sistema Microsoft Windows Server:
@@ -104,7 +102,11 @@ Un compte pot tenir diverses capacitats. Les assigna el sistema operatiu. El Mic
 
 #### Ús d'usuaris i grups locals
 
-Els grups i usuaris Per crear un compte d'usuari local cal seguir aquestes indicacions:
+{% hint style="info" %}
+L'ús d'usuaris i grups **locals** ens permet accedir als recursos de la pròpia màquina i sistema.
+{% endhint %}
+
+Per crear un compte d'usuari local cal seguir aquestes indicacions:
 
 1. Obriu _Administración de equipos_.
 2. Cliqueu a _Herramientas del sistema_.
@@ -115,7 +117,7 @@ Els grups i usuaris Per crear un compte d'usuari local cal seguir aquestes indic
 7. Activeu els quadres en funció de la configuració que voleu fer.
 8. Tanqueu les finestres amb _Crear_.
 
-Per restablir la contrasenya d'un usuari local cal fer el següent:
+Per **restablir** la **contrasenya** d'un usuari local cal fer el següent:
 
 1. Obriu _Administración de equipos_.
 2. Cliqueu a _Herramientas del sistema_.
@@ -126,7 +128,10 @@ Per restablir la contrasenya d'un usuari local cal fer el següent:
 7. Empleneu els camps _Contraseña nueva_ i _Confirmar contraseña nueva_ amb la contrasenya nova.
 8. Cliqueu a _Aceptar_.
 
-Normes a seguir en l'establiment de la contrasenya:
+{% hint style="info" %}
+
+
+Normes a seguir en l'establiment de la **contrasenya**:
 
 * S'ha d'exigir l'historial de contrasenyes per tal de no deixar utilitzar sempre el mateix grup de contrasenyes.
 * La vigència màxima de la contrasenya no pot excedir els trenta dies.
@@ -134,8 +139,9 @@ Normes a seguir en l'establiment de la contrasenya:
 * La contrasenya ha de tenir com a mínim vuit caràcters, o catorze com a mínim si necessiteu més seguretat.
 * La contrasenya no ha de contenir el nom de l'usuari.
 * La contrasenya ha de contenir minúscules, majúscules, números i símbols.
+{% endhint %}
 
-Per deshabilitar o activar un compte d'usuari local heu de seguir els passos següents:
+Per **deshabilitar** o **activar** un compte d'usuari local heu de seguir els passos següents:
 
 1. Obriu _Administración de equipos_.
 2. Cliqueu a _Herramientas del sistema_.
@@ -144,7 +150,7 @@ Per deshabilitar o activar un compte d'usuari local heu de seguir els passos seg
 5. Cliqueu amb el botó dret al damunt del compte d'usuari que necessiteu i premeu _Propiedades_.
 6. Aquí podeu activar o deshabilitar el compte.
 
-Per eliminar un compte d'usuari local heu de seguir aquestes indicacions:
+Per **eliminar** un compte d'usuari local heu de seguir aquestes indicacions:
 
 1. Obriu _Administración de equipos_.
 2. Cliqueu a _Herramientas del sistema_.
@@ -202,7 +208,7 @@ Per identificar els membres d'un grup local heu de seguir aquests passos:
 
 Els grups eliminats no es poden recuperar. Quan s'elimina només el grup no s'eliminen els comptes d'usuari, els comptes d'equip ni els comptes de grup que eren membres del grup. Si s'elimina un grup i se'n crea un de nou amb el mateix nom, aquest grup nou no hereta els permisos del grup anterior.
 
-Per eliminar un grup local heu de fer el següent:
+Per **eliminar** un grup local heu de fer el següent:
 
 1. Obriu _Administración de equipos_.
 2. Cliqueu a _Herramientas del sistema_.
