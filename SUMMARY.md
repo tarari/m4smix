@@ -11,6 +11,7 @@
   * [Directrius de grup](uf1.-sistemes-operatius-propietaris-en-xarxa/windows-server/directrius-de-grup.md)
   * [Usuaris i grups en Windows Server](uf1.-sistemes-operatius-propietaris-en-xarxa/windows-server/usuaris-i-grups-en-windows-server.md)
   * [Powershell i AD](uf1.-sistemes-operatius-propietaris-en-xarxa/windows-server/powershell-i-ad.md)
+  * [Gestió de dominis](uf1.-sistemes-operatius-propietaris-en-xarxa/windows-server/gestio-de-dominis.md)
 
 ## UF2 SISTEMES OPERATIUS LLIURES EN XARXA
 
