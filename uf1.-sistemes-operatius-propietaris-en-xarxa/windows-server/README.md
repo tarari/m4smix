@@ -77,13 +77,13 @@ Una vegada escollit l’opció d’instal·lació, cal que decidiu si fareu una 
 
 D'aquesta forma els possibles errors del sistemes operatiu no afectaran tant directament a les dades.
 
-* Amb el botó _**Nuevo**_, crear una partició d'uns 35 GB. 
+* Amb el botó _**`Nuevo`**_, crear una partició d'uns 35 GB. 
 * Utilitzar l'espai restant per crear una altra partició.
 * Seleccionar la partició de 15 GB per instal·lar el sistema i continuar endavant.
 
 **Assignar contrasenya de l'usuari Administrador**
 
-> S'ha de posar una contrasenya que compleixi els requisits de complexitat de Windows \(mínim 8 caràcters, minúscules, majúscules, números i símbols\).
+> S'ha de posar una contrasenya complexa, que compleixi els requisits de complexitat de Windows \(mínim 8 caràcters, minúscules, majúscules, números i símbols\).
 
 És recomanable que trieu bé aquesta contrasenya i la poseu a tot arreu, tant per Windows com per Linux \(evidentment, en un cas real s'han de posar contrasenyes diferents\).
 
