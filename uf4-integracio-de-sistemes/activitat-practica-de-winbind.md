@@ -9,7 +9,7 @@ Dades:
 * Domini: domini.com
 * Realm: DOMINI.COM
 
-```text
+```
 root@smb:~# apt -y install winbind libpam-winbind libnss-winbind krb5-config samba-dsdb-modules samba-vfs-modules
 # if using DHCP. answer [Yes], if static IP, answer [No]
  +----------------------+ Samba server and utilities +-----------------------+
@@ -72,7 +72,7 @@ root@smb:~# apt -y install winbind libpam-winbind libnss-winbind krb5-config sam
 
 ## Configurar winbind
 
-```text
+```
 root@smb:~# pico /etc/samba/smb.conf
 # line 29: change NetBIOS Name to AD DS's one and add like follows
    workgroup = DOMINI
@@ -80,8 +80,8 @@ root@smb:~# pico /etc/samba/smb.conf
    security = ads
    idmap config * : backend = tdb
    idmap config * : range = 3000-7999
-   idmap config FD3S01 : backend = rid
-   idmap config FD3S01 : range = 10000-999999
+   idmap config DOMINI : backend = rid
+   idmap config DOMINI : range = 10000-999999
    template homedir = /home/%U
    template shell = /bin/bash
    winbind use default domain = true
@@ -97,12 +97,12 @@ root@smb:~# pico /etc/pam.d/common-session
 session optional        pam_mkhomedir.so skel=/etc/skel umask=077
 root@smb:~# pico /etc/resolv.conf
 # canviar DNS al que té el AD
-nameserver 10.0.2.**
+nameserver 10.0.1.**
 ```
 
 ## Unió al domini Windows
 
-```text
+```
 # unió al  Active Directory (net ads join -U [AD's admin user])
 root@smb:~# net ads join -U Administrator (o Administrador)
 Enter Administrator's password:
@@ -125,6 +125,4 @@ Creating directory '/home/alumnes'.
 serverworld@smb:~$ id
 uid=11103(alumnes) gid=10513(domain users) groups=10513(domain users),11103(alumnes)
 ```
-
-
 
