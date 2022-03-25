@@ -10,7 +10,7 @@ Seguirem el següent patró:
 
 ## Instal·lació
 
-```text
+```
  sudo apt -y install samba krb5-config winbind smbclient
 # if using DHCP. answer [Yes], if static IP, answer [No]
  +----------------------+ Samba server and utilities +-----------------------+
@@ -76,7 +76,7 @@ Seguirem el següent patró:
 
 Utilitzarem l'eina **samba-tool**
 
-```text
+```
 #renombrar o eliminar configuaració per defecte
 root@smb:~# mv /etc/samba/smb.conf /etc/samba/smb.conf.org
 root@smb:~# samba-tool domain provision
@@ -161,11 +161,24 @@ Reconnecting with SRV for workgroup listing.
         WORKGROUP            NAS
 ```
 
-Si tot ha anat bé, tenim ja configurat un servidor amb el rol de controlador de domini
+Si tot ha anat bé, tenim ja configurat un servidor amb el rol de controlador de domini.
+
+Si no ha anat bé, hem de reconfigurar el SAMBA, afegim aquestes línies just després de la definicició de WORKGROUP:
+
+```
+client min protocol = NT1
+server min protocol = NT1
+```
+
+Ara reiniciem el nou servei samba-ad-dc i ja estarà, tornem a comprovar amb:
+
+```
+smbclient -L localhost -N
+```
 
 ## Confirmació de nivell de DC
 
-```text
+```
 # confirmar domain level
 root@smb:~# samba-tool domain level show
 Domain and forest function level for domain 'DC=domini,DC=com'
@@ -187,8 +200,7 @@ A part de confirmar, hem acabat creant amb les samba-tool un client, amb el que 
 
 Com a condició final per a aquest client Windows, dir-vos que cal afegir-lo al domini, i recordem que això significa que:
 
-* Windows 7 o 10 ha de ser client DNS del servidor Debian \(DNS preferit\)
-* Fer les comprovacions pertinents \(**nslookup**\)
+* Windows 7 o 10 ha de ser client DNS del servidor Debian (DNS preferit)
+* Fer les comprovacions pertinents (**nslookup**)
 
 Un cop unit al domini, podem iniciar sessió amb l'usuari creat.
-
