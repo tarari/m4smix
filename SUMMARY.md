@@ -17,6 +17,7 @@
 
 * [Introducció als sistemes operatius lliures en xarxa](uf2-sistemes-operatius-lliures-en-xarxa/introduccio-ala-sistemes-operatius-lliures-en-xarxa.md)
 * [Gestió d'usuaris i grups locals](uf2-sistemes-operatius-lliures-en-xarxa/gestio-dusuaris-i-grups-locals.md)
+* [OpenLDAP i autenticació](uf2-sistemes-operatius-lliures-en-xarxa/openldap-i-autenticacio.md)
 
 ## UF3 Compartició
 
@@ -30,4 +31,3 @@
 * [Integració de sistemes amb Windows - Linux com a estació de treball](uf4-integracio-de-sistemes/integracio-de-sistemes-amb-windows-linux-com-a-estacio-de-treball.md)
 * [Activitat pràctica de Winbind](uf4-integracio-de-sistemes/activitat-practica-de-winbind.md)
 * [Activitat pràctica Controlador de domini Debian](uf4-integracio-de-sistemes/activitat-practica-controlador-de-domini-debian.md)
-
