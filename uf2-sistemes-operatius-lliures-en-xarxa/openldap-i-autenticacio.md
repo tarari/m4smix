@@ -30,9 +30,9 @@ Aquests passos són una guia general, i pots necessitar adaptar-los a les teves 
 
 Per connectar a un servidor OpenLDAP utilitzant ldapsearch i realitzar consultes, podem fer servir la següent sintaxi:
 
-<pre><code>ldapsearch -x -H ldap://&#x3C;hostname or IP> -b &#x3C;baseDN> -D &#x3C;bindDN> -w &#x3C;bind password> &#x3C;search filter> &#x3C;attributes>
-<strong>
-</strong></code></pre>
+```
+ldapsearch -x -H ldap://<hostname or IP> -b <baseDN> -D <bindDN> -w <bind password> <search filter> <attributes>
+```
 
 * `-x`: Utilitza l'autenticació simple (username and password)
 * `-H`: Especifica l'URL del servidor LDAP. Pots utilitzar "ldap://" o "ldaps://" per a connexions no segures o segures, respectivament.
@@ -45,8 +45,7 @@ Per connectar a un servidor OpenLDAP utilitzant ldapsearch i realitzar consultes
 Exemple:
 
 ```
-// ldapsearch -x -H ldap://ldap.smix.local -b dc=smix,dc=local -D cn=admin,dc=smix,dc=local -w mypassword "(objectClass=inetOrgPerson)"
- code
+ldapsearch -x -H ldap://ldap.smix.local -b dc=smix,dc=local -D cn=admin,dc=smix,dc=local -w mypassword "(objectClass=inetOrgPerson)"
 ```
 
 Aquest exemple cerca totes les entrades de tipus **inetOrgPerson** en el servidor OpenLDAP en _ldap.smix.local_, amb un DN de base dc=smix,dc=local, utilitzant l'usuari amb DN cn=admin,dc=smix,dc=local i la contrasenya "mypassword".
@@ -70,7 +69,6 @@ auth sufficient pam_ldap.so
 account sufficient pam_ldap.so
 password sufficient pam_ldap.so
 session sufficient pam_ldap.so
-
 ```
 
 Aquests exemples, són per a sistemes on PAM i libpam-ldapd estan instal·lats, hauries de fer una revisió de la documentació dels teus paquets per assegurar-te que estan correctament configurats.
@@ -83,7 +81,6 @@ base dc=smix,dc=local
 ldap_version 3
 rootbinddn cn=admin,dc=smix,dc=local
 bind_policy soft
-
 ```
 
 En aquest exemple, es connecta al servidor OpenLDAP en ldap.smix.local, utilitzant el protocol LDAP versió 3, amb un DN de base dc=smix,dc=local, i l'usuari amb DN cn=admin,dc=smix,dc=local, i una politica de bind "soft"
