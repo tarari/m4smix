@@ -1,6 +1,10 @@
 # OpenLDAP i autenticació
 
-Servei de directori
+## Servei de directori
+
+El servei de directori permet accedir a través de protocol lleuger  (LDAP) a recursos de sistema. Estem parlant per exemple de serveis de consulta però també permet en general operacions CRUD (Crear, llegir, actualitzar i esborrar), com ara la consulta d'usuaris al servei d'autenticació.
+
+## Operació
 
 Si volem configurar un servidor OpenLDAP en Debian 11 per al domini "smix.local" i permetre l'autenticació PAM per als usuaris de sistema i els incorporats al servei de directori, es pot seguir els següents passos:
 
