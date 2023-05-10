@@ -1,12 +1,24 @@
 # Activitat pràctica Controlador de domini Debian
 
-Per configurar un servidor Debian buster com a Controlador de domini, seguirem una sèrie de passos. Recordem que un controlador de domini permet la gestió unificada d'usuaris i grups proporcionant un únic punt d'inici de sessió NETLOGON a través, en el cas de Samba 4.0, d'un sistema d'autenticació Kerberos.
+Per configurar un servidor Debian  com a Controlador de domini, seguirem una sèrie de passos. Recordem que un controlador de domini permet la **gestió unificada d'usuaris i grups** proporcionant un únic punt d'inici de sessió NETLOGON a través, en el cas de Samba 4.0, d'un sistema d'autenticació Kerberos.
 
 Seguirem el següent patró:
 
-* Domini:   DOMINI
-* Realm:   DOMINI.COM
-* Hostname:  srv.domini.com
+Apunta quin serà el vostre domini a crear, quin serà el regne d'autenticació kerberos (REALM), i quin serà el nom dns del vostre servidor administratiu.
+
+{% hint style="info" %}
+Cal respectar les majúscules i minúscules!
+{% endhint %}
+
+
+
+* Domini:   **DOMINI**
+* Realm:   **DOMINI.COM**
+* Hostname:  **srv.domini.com**
+
+{% hint style="warning" %}
+Hem de ser curosos a l'hora de seguir l'activitat, repasem tots els missatges del sistema, observem tots els requeriments, i si ens equivoquem mirem el pas anterior.
+{% endhint %}
 
 ## Instal·lació
 
@@ -74,14 +86,13 @@ Seguirem el següent patró:
 
 ## Configurar Samba AD DC
 
-Utilitzarem l'eina **samba-tool**
+Utilitzarem l'eina **samba-tool,** una eina d'administració de domini
 
-```
-#renombrar o eliminar configuaració per defecte
-root@smb:~# mv /etc/samba/smb.conf /etc/samba/smb.conf.org
+<pre><code>#renomenar o eliminar configuració per defecte
+root@smb:~# mv /etc/samba/smb.conf /etc/samba/smb.conf.orig
 root@smb:~# samba-tool domain provision
 #especificar REALM
-Realm [DOMINI.COM]: 
+Realm [<a data-footnote-ref href="#user-content-fn-1">DOMINI.COM</a>]: 
 # especificar nom de domini
  Domain [DOMINI]: DOMINI 
 #per defecte rol dc
@@ -159,7 +170,7 @@ Reconnecting with SRV for workgroup listing.
         Workgroup            Master
         ---------            -------
         WORKGROUP            NAS
-```
+</code></pre>
 
 Si tot ha anat bé, tenim ja configurat un servidor amb el rol de controlador de domini.
 
@@ -175,6 +186,16 @@ Ara reiniciem el nou servei samba-ad-dc i ja estarà, tornem a comprovar amb:
 ```
 smbclient -L localhost -N
 ```
+
+### Possibles errors:
+
+#### Falta de zona inversa en DNS intern
+
+Quan fem nslookup des de l'equip Windows, no troba el servidor DNS del nostre equip, cal crear la zona inversa i els registres associats
+
+{% embed url="https://wiki.samba.org/index.php/Setting_up_Samba_as_an_Active_Directory_Domain_Controller#Create_a_reverse_zone" %}
+Crear zona inversa en DNS interna
+{% endembed %}
 
 ## Confirmació de nivell de DC
 
@@ -204,3 +225,5 @@ Com a condició final per a aquest client Windows, dir-vos que cal afegir-lo al 
 * Fer les comprovacions pertinents (**nslookup**)
 
 Un cop unit al domini, podem iniciar sessió amb l'usuari creat.
+
+[^1]: Nom dns del domini, en majúscules
